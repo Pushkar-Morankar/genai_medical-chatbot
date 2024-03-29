@@ -1,9 +1,5 @@
 ctransformer==0.2.5
-sentencetransformer
+sentencetransformer==2.2.2
 pinecone-cliennt
 langchain==0.0.225
 flask
-
-
-
-
