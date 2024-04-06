@@ -7,8 +7,8 @@ import os
 load_dotenv()
 
 qdrant_client = QdrantClient(
-    url=url, 
-    api_key=api_key
+    url=os.getenv('url'), 
+    api_key=os.getenv('api_key')
 )
 
 # print(url)
@@ -20,8 +20,8 @@ embeddings = download_hugging_face_embeddings()
 
 
 #Initializing the qdrant
-url = "https://ca57a25b-6ae0-4dd7-b454-839c21d31eb5.us-east4-0.gcp.cloud.qdrant.io:6333"
-api_key = "NCs4WeHRA9Nb9CZUh35nmRQ4--KwoqoP4ApP2zC9BFQqmAM2-YoKPw"
+url = os.getenv('url')
+api_key = os.getenv('url')
 
 
 #Creating Embeddings for Each of The Text Chunks & storing

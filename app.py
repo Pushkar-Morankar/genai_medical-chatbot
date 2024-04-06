@@ -14,8 +14,8 @@ app= Flask(__name__)
 
 load_dotenv()
 
-url=url, 
-api_key=api_key
+url=os.getenv('url'), 
+api_key=os.getenv('api_key')
 
 
 embeddings = download_hugging_face_embeddings()
@@ -46,7 +46,8 @@ qa=RetrievalQA.from_chain_type(
     chain_type="stuff", 
     retriever=qdrant.as_retriever(search_kwargs={'k': 2}),
     return_source_documents=True, 
-    chain_type_kwargs=chain_type_kwargs)
+    chain_type_kwargs=chain_type_kwargs
+    )
 
 
 @app.route("/")
